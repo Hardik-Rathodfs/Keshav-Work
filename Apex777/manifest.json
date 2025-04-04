@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "apex popup",
+  "version": "1.0",
+  "description": "description.",
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "https://www.apex777.club/sport/"],
+  "host_permissions": ["https://www.apex777.club/sport/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": "logo.png"
+  },
+  "content_scripts": [
+      {
+          "matches": ["https://www.apex777.club/sport/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*",  "https://www.apex777.club/sport/*"]
+  }
+}

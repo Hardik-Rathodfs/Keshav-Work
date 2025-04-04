@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "bookmaker popup",
+  "version": "1.0",
+  "description": "description.",
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "https://bookmaker9.com/"],
+  "host_permissions": ["https://bookmaker9.com/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": "logo.png"
+  },
+  "content_scripts": [
+      {
+          "matches": ["https://bookmaker9.com/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*",  "https://bookmaker9.com/*"]
+  }
+}
