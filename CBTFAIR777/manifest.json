@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "cbtfair777",
+  "version": "1.0",
+  "description": "description.",
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "https://www.cbtfair777.com/sport/"],
+  "host_permissions": ["https://www.cbtfair777.com/sport/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": "logo.png"
+  },
+  "content_scripts": [
+      {
+          "matches": ["https://www.cbtfair777.com/sport/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*",  "https://www.cbtfair777.com/sport/*"]
+  }
+}

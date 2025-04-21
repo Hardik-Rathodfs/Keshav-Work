@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "cbtfair9",
+  "version": "1.0",
+  "description": "description.",
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "https://www.cbtfair9.com/"],
+  "host_permissions": ["https://www.cbtfair9.com/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": "logo.png"
+  },
+  "content_scripts": [
+      {
+          "matches": ["https://www.cbtfair9.com/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*",  "https://www.cbtfair9.com/*"]
+  }
+}

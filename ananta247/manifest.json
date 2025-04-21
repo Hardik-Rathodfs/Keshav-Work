@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Ananta247",
+  "version": "1.0",
+  "description": "description.",
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "https://Ananta247.com/"],
+  "host_permissions": ["https://Ananta247.com/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": "logo.png"
+  },
+  "content_scripts": [
+      {
+          "matches": ["https://Ananta247.com/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*",  "https://Ananta247.com/*"]
+  }
+}

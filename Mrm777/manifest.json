@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "mrm777",
+  "version": "1.0",
+  "description": "description.",
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "https://mrm777.com/sport/"],
+  "host_permissions": ["https://mrm777.com/sport/"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": "logo.png"
+  },
+  "content_scripts": [
+      {
+          "matches": ["https://mrm777.com/sport/"],
+          "js": ["content.js"]
+      }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*",  "https://mrm777.com/sport/*"]
+  }
+}
