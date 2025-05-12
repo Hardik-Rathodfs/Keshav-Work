@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "pdm999",
+  "version": "1.0",
+  "description": "description.",
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "https://pdm999.com/"],
+  "host_permissions": ["https://pdm999.com/"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": "logo.png"
+  },
+  "content_scripts": [
+      {
+          "matches": ["https://pdm999.com/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*",  "https://pdm999.com/*"]
+  }
+}
